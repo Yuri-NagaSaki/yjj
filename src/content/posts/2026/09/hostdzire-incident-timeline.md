@@ -1,20 +1,22 @@
 ---
 title: "HostDZire 记录：勒索、再次被入侵、无预警停机、踢群，以及道歉并终止服务"
 pubDatetime: 2026-09-19T12:00:00+08:00
-modDatetime: 2026-09-21T12:00:00+08:00
+modDatetime: 2026-10-10T23:40:00+08:00
 featured: true
 tags:
   - HostDZire
-  - 安全
-description: "2026 年 8 月初至 9 月 21 日：HostDZire 的 VMware 勒索、自营机器被植入后门、以未在面板重装为由停机、工单与 Telegram 记录，以及官方道歉并终止服务的邮件。"
+description: "2026 年 8 月初至 9 月 21 日：HostDZire 的 VMware 勒索、自营机器被植入后门、以未在面板重装为由停机、工单与 Telegram 记录、道歉并终止服务的邮件"
 timezone: Asia/Shanghai
 ---
 
-下面按日期记录 HostDZire 从 2026 年 8 月初到 9 月 21 日的经过，并附上邮件、面板和聊天截图。相关讨论在 [NodeSeek #937638](https://www.nodeseek.com/post-937638-1)。
 
-我买过他们不少机器。购买数量不改变下面这些记录。免责条款也不是无预警停机、不核实就解封的理由。
+相关讨论：
 
-评测他们自营印度机房的 AMD 7K62 时，我写过：印度节点是 HostDZire 自运营的，和 Leaseweb 无关，稳定性存疑；虚拟化是 VMware，超售情况未知。
+- [NodeSeek #938769：官方回复、踢群和后续](https://www.nodeseek.com/post-938769-1)
+- [NodeSeek #937638：两次安全事件和无预警停机](https://www.nodeseek.com/post-937638-1)
+- [LowEndTalk：无通知停机，要求道歉](https://lowendtalk.com/discussion/221287/hostdzire-shut-me-down-with-no-notice-i-want-an-apology/p1)
+
+
 
 ## 时间线
 
@@ -44,9 +46,9 @@ LowEndTalk 和 NodeSeek 上当时有大量用户报告数据丢失。
 
 相关帖：[NodeSeek #918583](https://www.nodeseek.com/post-918583-1)。
 
-同一天，官方发出第二封调查通告。
+同一天，官方发出邮件通知。
 
-![HostDZire 9 月 8 日安全事件通告](./evidence/2026-09-08-security-notice.webp)
+![Z33BIMCdxCiQyQqn0pSqj0n229LMDcUW.webp](https://cdn.nodeimage.com/i/Z33BIMCdxCiQyQqn0pSqj0n229LMDcUW.webp)
 
 这封邮件的口径是：
 
@@ -97,7 +99,7 @@ LowEndTalk 和 NodeSeek 上当时有大量用户报告数据丢失。
 
 ### 2026 年 9 月 20 日：统一工单、NodeSeek 回复、Telegram 踢人
 
-官方对大量停机质询使用了同一份工单模板。英文原文：
+官方对停机质询使用了同一份工单模板。英文原文：
 
 ```text
 We previously sent a security notification on 8 September 2026 advising that this VPS needed to be reinstalled for security purposes. However, our records show that the VPS has still not been reinstalled.
@@ -181,29 +183,15 @@ In that case, no further reinstallation will be required from our side.
 
 说完这句之后，对方把我移出了官方 Telegram 群。群里没有留下「为什么把提出问题的人移出群」的说明。
 
-我发这些记录不是为了换一笔退款。别的商家出故障时，至少可以把日志和工单摆开来。一个对照帖是 [NodeSeek #111565](https://www.nodeseek.com/post-111565-1)。
 
 ### 2026 年 9 月 21 日：官方道歉，并决定终止全部服务
 
-HostDZire 发来邮件。用户收到的是道歉，以及清退相关服务的决定。邮件全文以这张截图为准。
+HostDZire 发来邮件。用户收到的是道歉，以及清退相关服务的决定。
 
 ![HostDZire 2026 年 9 月 21 日官方邮件](./evidence/2026-09-21-apology.webp)
 
-邮件里写明的内容是：
+## 结论
 
-- 为首句就最近在 HostDZire 遇到的问题和不便道歉。
-- 点名了安全相关事件、VPS 停机、要求重装操作系统，以及其中一些事项的处理方式。
-- 称不论那些决定背后的情况如何，整体体验不能令人满意，并为此道歉。
-- 称已经解释过事件和采取措施的原因，也多次提出：如果不再想继续，可以离开，并退还未使用期限的费用。
-- 称事情仍通过 NodeSeek、LowEndTalk（LET）、Telegram 和其他讨论继续。对方认为持续的公开指控包含他们所说的 defamatory statements，即使提供了退款并允许离开，继续做服务商和客户所需要的信任已经不存在。
-- 因此决定终止业务关系，停止我当时在 HostDZire 的全部服务。
-- 自这封邮件之日起给 7 天备份数据、把服务迁走。这 7 天里现有服务保持可用。
-- 7 天结束后：正在使用的服务会被暂停；暂停后再保留 72 小时，数据和临时访问联系窗口仍在；72 小时结束后相关服务永久取消。
-- 之后会计算并退还符合条件的、仍在使用的服务里未使用期限的费用。
-- 最终取消后剩下的数据可能被永久删除。
-- 账户不能再向 HostDZire 订购或续费。
-- 称这是最终决定，理由是继续业务关系对双方都不再有益。
-- 称不要求删除已经发出的帖子，不要求改变观点，也不要求停止讨论这段经历。对方写的处理方式是退还未使用期限，然后分开。
-- 再次为不便和问题道歉。落款是 HostDZire Team。
+HostDZire 傲慢、自私，不尊重付费用户。两次安全事故和这次停机里，他们没有拿出查清问题、挡住入侵、修好机器的技术能力。遇到质疑，他们退款、踢人、终止账户。他们解决的是提出问题的人。如果问题真的来自他们，他们永远也只会退款。仿佛只要退款了，事情就没有发生过。
 
-所以 9 月 21 日这封邮件同时做了两件事：道歉，以及宣布清退。清退不是当天立刻删数据。邮件自己的时间表是 7 天迁移，接着暂停，再给 72 小时，然后永久取消、可能删除剩余数据，并禁止这个账户继续购买。
+
