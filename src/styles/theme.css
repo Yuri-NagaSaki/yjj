@@ -7,7 +7,8 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
-  --font-app: var(--font-google-sans-code);
+  --font-app: var(--font-google-sans-code), "PingFang SC", "Noto Sans SC",
+    "Microsoft YaHei", sans-serif;
 }
 
 /* Light theme values */

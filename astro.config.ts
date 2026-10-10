@@ -19,6 +19,36 @@ import {
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import config from "./astro-paper.config";
 
+function googleSansCodeVariant(
+  weight: 300 | 400 | 500 | 600 | 700,
+  style: "normal" | "italic"
+) {
+  return {
+    weight,
+    style,
+    src: [
+      `./node_modules/@fontsource/google-sans-code/files/google-sans-code-latin-${weight}-${style}.woff2`,
+      `./node_modules/@fontsource/google-sans-code/files/google-sans-code-latin-${weight}-${style}.woff`,
+    ] as [string, string],
+  };
+}
+
+const googleSansCodeVariants = [
+  googleSansCodeVariant(300, "normal"),
+  googleSansCodeVariant(300, "italic"),
+  googleSansCodeVariant(400, "normal"),
+  googleSansCodeVariant(400, "italic"),
+  googleSansCodeVariant(500, "normal"),
+  googleSansCodeVariant(500, "italic"),
+  googleSansCodeVariant(600, "normal"),
+  googleSansCodeVariant(600, "italic"),
+  googleSansCodeVariant(700, "normal"),
+  googleSansCodeVariant(700, "italic"),
+] as [
+  ReturnType<typeof googleSansCodeVariant>,
+  ...ReturnType<typeof googleSansCodeVariant>[],
+];
+
 export default defineConfig({
   site: config.site.url,
   integrations: [
@@ -29,8 +59,8 @@ export default defineConfig({
     }),
   ],
   i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
+    locales: ["zh-CN"],
+    defaultLocale: "zh-CN",
     routing: {
       prefixDefaultLocale: false,
     },
@@ -62,11 +92,11 @@ export default defineConfig({
     {
       name: "Google Sans Code",
       cssVariable: "--font-google-sans-code",
-      provider: fontProviders.google(),
+      // Files come from the Fontsource package installed by pnpm.
+      // Workers Builds cannot reach fonts.gstatic.com.
+      provider: fontProviders.local(),
       fallbacks: ["monospace"],
-      weights: [300, 400, 500, 600, 700],
-      styles: ["normal", "italic"],
-      formats: ["woff", "ttf"],
+      options: { variants: googleSansCodeVariants },
     },
   ],
   env: {
