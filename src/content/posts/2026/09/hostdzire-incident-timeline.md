@@ -16,15 +16,13 @@ timezone: Asia/Shanghai
 - [NodeSeek #937638：两次安全事件和无预警停机](https://www.nodeseek.com/post-937638-1)
 - [LowEndTalk：无通知停机，要求道歉](https://lowendtalk.com/discussion/221287/hostdzire-shut-me-down-with-no-notice-i-want-an-apology/p1)
 
-
-
 ## 时间线
 
 ### 2026 年 8 月初：VMware 遭勒索，数据被宣告永久丢失
 
 约 2026 年 8 月 5 日，HostDZire 发出题为 serious security incident 的邮件。他们的 VMware ESXi 基础设施遭受勒索攻击。
 
-![HostDZire 8 月初 VMware 勒索攻击通报](./evidence/2026-08-05-ransomware.webp)
+![HostDZire 8 月初 VMware 勒索攻击通报](./evidence/2026-08-05-ransomware.png)
 
 邮件里的要点：
 
@@ -42,14 +40,13 @@ LowEndTalk 和 NodeSeek 上当时有大量用户报告数据丢失。
 当时公开描述的共同特征：
 
 1. 机器上被安装与 Xboard 相关的代理服务端。
-2. `/root/.ssh/authorized_keys` 被写入未知的 root SSH 公钥。
+2. `/root/.ssh/authorized_keys` 被写入未知的 root SSH 公钥。image.png
 
 相关帖：[NodeSeek #918583](https://www.nodeseek.com/post-918583-1)。
 
 同一天，官方发出邮件通知。
 
-![Z33BIMCdxCiQyQqn0pSqj0n229LMDcUW.webp](https://cdn.nodeimage.com/i/Z33BIMCdxCiQyQqn0pSqj0n229LMDcUW.webp)
-
+![Z33BIMCdxCiQyQqn0pSqj0n229LMDcUW.webp](./evidence/2026-09-08-security-notice.png)
 这封邮件的口径是：
 
 1. 称母鸡物理节点没有发现被入侵，WHMCS 面板也没有发现活动入侵迹象。同时提到 WHMCS 在 8 月 25 日和 9 月 3 日发布过未公开的安全补丁。
